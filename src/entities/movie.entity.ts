@@ -6,14 +6,19 @@ import { IMovie } from './interfaces/IMovie.interface';
 export class MovieEntity extends BaseEntity implements IMovie {
 	@PrimaryGeneratedColumn()
 	public id: number;
+
 	@Column({type: 'varchar'})
 	public description: string;
+
 	@Column({type: 'varchar'})
 	public name: string;
+
 	@Column({type: 'decimal', scale: 2, precision: 10, default: 0})
 	public price: number;
+
 	@Column({type: 'int'})
 	public duration: number;
+
 	@Column({type: 'varchar'})
 	public genre: string;
 

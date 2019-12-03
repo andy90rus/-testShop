@@ -6,8 +6,10 @@ import { OrderEntity } from './order.entity';
 export class StoreEntity extends BaseEntity implements IStore {
 	@PrimaryGeneratedColumn()
 	public id: number;
+
 	@Column({type: 'varchar', length: 100, name: 'name'})
 	public name: string;
+
 	@OneToMany(() => OrderEntity, (order) => order.store, {cascade: true})
 	public orders: OrderEntity[];
 
