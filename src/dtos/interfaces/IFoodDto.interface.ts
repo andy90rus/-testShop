@@ -6,4 +6,6 @@ export interface IFoodDto {
 	name: string;
 	description: string;
 	foodType: FoodType;
+
+	entityToModel(): void;
 }
