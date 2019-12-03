@@ -1,0 +1,35 @@
+{
+  "defaultSeverity": "error",
+  "extends": ["tslint:recommended"],
+  "rules": {
+    "variable-name": [true, "check-format", "allow-leading-underscore"],
+    "no-empty": false,
+    "object-literal-sort-keys": false,
+    "adjacent-overload-signatures": true,
+    "whitespace": [true, "check-module", "check-branch"],
+    "quotemark": [
+      true,
+      "single",
+      "avoid-escape"
+    ],
+    "ordered-imports": [
+      true,
+      {
+        "import-sources-order": "lowercase-last",
+        "named-imports-order": "lowercase-first"
+      }
+    ],
+    "member-access": true,
+    "no-any": false,
+    "no-var-requires": true,
+    "no-shadowed-variable": true,
+    "no-var-keyword": true,
+    "triple-equals": true,
+    "no-arg": true,
+    "no-bitwise": true,
+    "no-conditional-assignment": true,
+    "no-consecutive-blank-lines": false,
+    "no-console": true,
+    "indent": [true, "spaces", 4]
+  }
+}
