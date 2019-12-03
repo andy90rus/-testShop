@@ -21,7 +21,7 @@ export class OrderController {
 		return order;
 	}
 
-	@Get('/stores/:storeId/orders/:id')
+	@Get('/:storeId/orders/:id')
 	public async getOrderByIdAndStoreId(@Param('id') orderId: number, @Param('storeId') storeId: number) {
 		const order = await OrderEntity.findOne(orderId, {where: {storeId}});
 		if (!order) {
@@ -30,7 +30,7 @@ export class OrderController {
 		return order;
 	}
 
-	@Get('/stores/:storeId/orders/')
+	@Get('/:storeId/orders/')
 	public async getOrdersByStoreId(@Param('storeId') storeId: number) {
 		return await OrderEntity.find({where: {storeId}});
 	}
