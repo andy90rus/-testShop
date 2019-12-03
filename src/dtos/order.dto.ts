@@ -12,8 +12,6 @@ export class OrderDto implements IOrderDto {
 	public baseAmount: number;
 	@IsDefined({message: 'StoreId is required field'})
 	public storeId: number;
-	@IsDefined({message: 'TotalAmount is required field'})
-	public totalAmount: number;
 
 	public entityToModel(): void {
 	}
