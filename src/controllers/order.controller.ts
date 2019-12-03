@@ -1,9 +1,12 @@
 import { BadRequestError, Body, Get, HttpCode, JsonController, Param, Post } from 'routing-controllers';
 import { OrderEntity } from '../entities/order.entity';
 import { OrderDto } from '../dtos/order.dto';
+import { OrderService } from '../services/order.service';
 
 @JsonController('/stores')
 export class OrderController {
+	constructor(private _orderService: OrderService){}
+
 	@Get('/orders/')
 	public async getAllOrders(): Promise<OrderEntity[]> {
 		return await OrderEntity.find();

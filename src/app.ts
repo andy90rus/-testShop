@@ -6,6 +6,9 @@ import { OrderController } from './controllers/order.controller';
 import { StoreController } from './controllers/store.controller';
 import Container from 'typedi';
 import { DataBaseService } from './dataBase.service';
+import { ShopController } from './controllers/shop.controller';
+import { FoodController } from './controllers/food.controller';
+import { MovieController } from './controllers/movie.controller';
 
 class App {
     public app: express.Application;
@@ -19,10 +22,12 @@ class App {
             .catch((err) => console.error('database error', err));
         this.app = createExpressServer({
             routePrefix: '/api',
-            cors: {exposedHeaders: ['Content-Disposition']},
             controllers: [
                 OrderController,
                 StoreController,
+                ShopController,
+                FoodController,
+                MovieController,
             ]
         });
         this.app.listen(_config.port);
